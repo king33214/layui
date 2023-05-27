@@ -23,6 +23,6 @@ body {
   background: url('../images/login_title.png') no-repeat center;
 }
 
-.reg-box{
+.demo-reg-container{
   display: none;
 }
