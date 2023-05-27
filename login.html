@@ -15,20 +15,19 @@
   <div class="layui-main">
     <img src="./assets/images/logo.png" alt="" />
   </div>
-  <!-- 登录注册 -->
   <div class="loginAndRegBox">
     <div class="title-box"></div>
+    <!-- 登录 -->
     <div class="login-box">
-      <form class="layui-form">
-        <!-- 登录 -->
-        <div class="demo-login-container" id="login_page">
+      <form class="layui-form" id="layui-form-login">
+        <div class="demo-login-container">
           <!-- 用户名 -->
           <div class="layui-form-item">
             <div class="layui-input-wrap">
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-username"></i>
               </div>
-              <input type="text" name="username" placeholder="用户名" autocomplete="off" class="layui-input" lay-verify required>
+              <input type="text" name="username" placeholder="用户名" autocomplete="off" class="layui-input" >
             </div>
           </div>
           <!-- 密码 -->
@@ -37,7 +36,7 @@
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-password"></i>
               </div>
-              <input type="password" name="password" placeholder="密码" autocomplete="off" class="layui-input" lay-verify required>
+              <input type="password" name="password" placeholder="密码" autocomplete="off" class="layui-input">
             </div>
           </div>
           <!-- 验证码 -->
@@ -48,7 +47,7 @@
                   <div class="layui-input-prefix">
                     <i class="layui-icon layui-icon-vercode"></i>
                   </div>
-                  <input type="text" name="verification" placeholder="验证码" autocomplete="off" class="layui-input" lay-verify required>
+                  <input type="text" name="verification" placeholder="验证码" autocomplete="off" class="layui-input" >
                 </div>
               </div>
               <div class="layui-col-xs5">
@@ -78,8 +77,12 @@
             或 <a href="javascript:;" id="register_account">注册帐号</a>
           </div>
         </div>
-        <!-- 注册 -->
-        <div class="demo-reg-container" id="reg_page">
+      </form>
+    </div>
+    <!-- 注册 -->
+    <div class="reg-box">
+      <form class="layui-form" id="layui-form-res">
+        <div class="demo-reg-container">
           <!-- 手机号 -->
           <div class="layui-form-item">
             <div class="layui-row">
@@ -88,7 +91,7 @@
                   <div class="layui-input-prefix">
                     <i class="layui-icon layui-icon-cellphone"></i>
                   </div>
-                  <input type="text" name="cellphone"  placeholder="手机号" autocomplete="off" class="layui-input" >
+                  <input type="text" name="cellphone" value=""  placeholder="手机号" " autocomplete="off" class="layui-input" id="reg-cellphone">
                 </div>
               </div>
               <div class="layui-col-xs5">
@@ -104,7 +107,7 @@
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-vercode"></i>
               </div>
-              <input type="text" name="vercode"  placeholder="验证码" autocomplete="off" class="layui-input">
+              <input type="text" name="vercode" value="" placeholder="验证码"  autocomplete="off" class="layui-input">
             </div>
           </div>
           <!-- 密码 -->
@@ -113,37 +116,37 @@
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-password"></i>
               </div>
-              <input type="password" name="password"  placeholder="密码" autocomplete="off" class="layui-input">
+              <input type="password" name="password" value=""  placeholder="密码" autocomplete="off" class="layui-input" id="reg-password">
             </div>
           </div>
-          <!-- 确认密码 -->
+          <!-- 二次密码 -->
           <div class="layui-form-item">
             <div class="layui-input-wrap">
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-password"></i>
               </div>
-              <input type="password" name="confirmPassword"  placeholder="确认密码" autocomplete="off" class="layui-input" >
+              <input type="password" name="confirmPassword" value="" lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input" lay-affix="eye">
             </div>
           </div>
-          <!-- 昵称 -->
+          <!-- 用户名 -->
           <div class="layui-form-item">
             <div class="layui-input-wrap">
               <div class="layui-input-prefix">
                 <i class="layui-icon layui-icon-username"></i>
               </div>
-              <input type="text" name="nickname"  placeholder="昵称" autocomplete="off" class="layui-input">
+              <input type="text" name="nickname" value="" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input" lay-affix="clear">
             </div>
           </div>
           <!-- 协议 -->
           <div class="layui-form-item">
-            <input type="checkbox" name="agreement" title="同意"> 
-            <a href="#" target="_blank" style="position: relative; top: 6px; left: -15px;">
+            <input type="checkbox" name="agreement" lay-verify="required" lay-skin="primary" title="同意"> 
+            <a href="javascript:;" target="_blank" style="position: relative; top: 6px; left: -15px;">
               <ins>用户协议</ins>
             </a>
           </div>
           <!-- 注册 -->
           <div class="layui-form-item">
-            <button class="layui-btn layui-btn-fluid">注册</button>
+            <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-reg">注册</button>
           </div>
           <!-- 社交 -->
           <div class="layui-form-item demo-reg-other">
@@ -153,7 +156,7 @@
               <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="color: #4daf29;"></i></a>
               <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo" style="color: #cf1900;"></i></a>
             </span>
-            <a href="#">登录已有帐号</a>
+            <a href="javascript:;">登录已有帐号</a></span>
           </div>
         </div>
       </form>
